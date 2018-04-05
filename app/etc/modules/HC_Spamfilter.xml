@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <HC_Spamfilter>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends></depends>
+        </HC_Spamfilter>
+    </modules>
+</config>

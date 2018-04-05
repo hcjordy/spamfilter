@@ -1,0 +1,4 @@
+HC_Spamfilter.xml               app/etc/modules/HC_Spamfilter.xml
+code/HC/Spamfilter              app/code/community/HC/Spamfilter
+locale/nl_NL/HC_Spamfilter.csv  app/locale/nl_NL/HC_Spamfilter.csv
+locale/en_US/HC_Spamfilter.csv  app/locale/en_US/HC_Spamfilter.csv

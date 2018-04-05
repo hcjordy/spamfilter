@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <hc translate="label">
+            <label><![CDATA[<div style="display:inline-block;color:#f09">HC DESIGNS</div>]]></label>
+            <sort_order>320</sort_order>
+        </hc>
+    </tabs>
+    <sections>
+        <hc_general translate="label" module="spamfilter">
+            <tab>hc</tab>
+            <label>General</label>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <spamfilter translate="label">
+                <label>Spam Filter</label>
+                <sort_order>10</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>1</show_in_store>
+                <fields>
+                    <blocked_domains translate="label">
+                        <label>Blocked Domains</label>
+                        <frontend_type>text</frontend_type>
+                        <frontend_model>spamfilter/config_BlockedDomain</frontend_model>
+                        <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                        <sort_order>10</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <comment>Only domains is also possible (eg. qq.com)</comment>
+                    </blocked_domains>
+                    <blocked_text translate="label">
+                        <label>Blocked Text</label>
+                        <frontend_type>textarea</frontend_type>
+                        <sort_order>12</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <comment>Use a comma to divide words. Text is not case sensitive</comment>
+                    </blocked_text>
+                </fields>
+                </spamfilter>
+            </groups>
+        </hc_general>
+    </sections>
+</config>
+
