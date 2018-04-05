@@ -7,7 +7,7 @@ Facts
 - version: 1.5.0
 - extension key: HC_Spamfilter
 - Install by modman
-- [extension on GitHub](https://github.com/hc/HC_Spamfilter)
+- [extension on GitHub](https://github.com/hcdesigns/spamfilter.git)
 
 Description
 -----------
