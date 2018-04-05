@@ -2,7 +2,7 @@
 <config>
     <modules>
         <HC_Spamfilter>
-            <version>1.5.0</version>
+            <version>1.6.0</version>
         </HC_Spamfilter>
     </modules>
     <global>
@@ -31,6 +31,15 @@
                     </spamfilter>
                 </observers>
             </controller_action_predispatch_customer_account_createpost>
+            <controller_action_predispatch_contacts_index_post>
+                <observers>
+                    <spamfilter>
+                        <class>spamfilter/EmailFilterObserver</class>
+                        <type>Singleton</type>
+                        <method>checkContactsForm</method>
+                    </spamfilter>
+                </observers>
+            </controller_action_predispatch_contacts_index_post>
             <controller_action_predispatch_newsletter_subscriber_new>
                 <observers>
                     <spamfilter>
