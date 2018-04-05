@@ -1,5 +1,5 @@
 # module
-app/etc/modules/app/HC_Spamfilter.xml   app/etc/modules/HC_Spamfilter.xml
+app/etc/modules/HC_Spamfilter.xml       app/etc/modules/HC_Spamfilter.xml
 app/code/community/HC/Spamfilter        app/code/community/HC/Spamfilter
 
 # locale
