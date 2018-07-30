@@ -41,7 +41,7 @@ class HC_Spamfilter_Model_EmailFilterObserver {
             return false;
         }
 
-        if (!$this->checkEmail($request->getPost('email')) || !$this->checkText($request->getPost('email'), $request->getPost('name'), $request->getPost('comment'), $request->getPost('telephone'))) {
+        if (!$this->checkEmail($request->getPost('email')) || !$this->checkText($request->getPost('email'), $request->getPost('name'), $request->getPost('comment'), $request->getPost('telephone')) || $this->checkRussianCharacters($request->getPost('name').$request->getPost('comment'))) {
             $this->session()->addError($this->helper()->__('You\'re not allowed to contact us'));
             $url = Mage::helper('core/http')->getHttpReferer() ? Mage::helper('core/http')->getHttpReferer()  : Mage::getUrl();
 
@@ -63,7 +63,7 @@ class HC_Spamfilter_Model_EmailFilterObserver {
         if (is_null($request->getPost('email'))) {
             return false;
         }
-        if (!$this->checkEmail($request->getPost('email')) || !$this->checkText($request->getPost('email'), $request->getPost('firstname'), $request->getPost('lastname'))) {
+        if (!$this->checkEmail($request->getPost('email')) || !$this->checkText($request->getPost('email'), $request->getPost('firstname'), $request->getPost('lastname')) || $this->checkRussianCharacters($request->getPost('name'))) {
             $request->setPost('email', '');
             $session = Mage::getSingleton('customer/session');
             $session->addError($this->helper()->__('You\'re not allowed to create an account'));
@@ -115,10 +115,19 @@ class HC_Spamfilter_Model_EmailFilterObserver {
                 }
             }
         }
-        return false;
+
+        return true;
     }
 
 
+    /**
+     * @param string $string
+     *
+     * @return bool
+     */
+    private function checkRussianCharacters(string $string) {
+        return preg_match('/[А-Яа-яЁё]/u', $string);
+    }
 
     /**
      * @return Mage_Customer_Model_Session
